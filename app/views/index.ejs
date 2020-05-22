@@ -1,3 +1,30 @@
-<% include partials/header %>        
-        <h1>Index</h1>
+<% include partials/header %> 
+
+        <% if(isAuthenticated) { %>       
+                <div class="row">
+                        <% for (var list of data) { %>   
+                                <div class="col-sm-2">
+                                        <div class="card">
+                                                <div class="card-header">
+                                                        <%= list.name %>
+                                                </div>
+                                                <div class="card-body">
+                                                        <form>
+                                                                <div class="form-group">
+                                                                        <input type="text" class="form-control" id="item" placeholder="New Item">
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary">Add</button>
+                                                        </form>
+                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                        <% for (var item of list.items) { %>
+                                                                <li class="list-group-item"> <%= item.name %> </li> 
+                                                        <% } %>
+                                                </ul>
+                                        </div>
+                                </div>
+                        <% } %>
+                </div>
+        <% } %>
+
 <% include partials/footer %>
