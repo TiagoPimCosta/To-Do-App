@@ -41,7 +41,6 @@ module.exports = {
 		});
 	},
 
-	//New
 	areValidCredentials(username, password, callback) {
 		var sql = "SELECT password FROM users WHERE username=?";
 		global.connection.query(sql, [username], function(error, rows, fields){
