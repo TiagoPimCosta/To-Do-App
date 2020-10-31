@@ -2,7 +2,7 @@
 
 File /app/.env
 
-  PORT =
+  PORT = 
   DATABASE_HOST =
   DATABASE_USER =
   DATABASE_PASS =
